@@ -11,9 +11,9 @@ geotab.addin.initialize(function (api, state) {
     let allRules = [];
     let allAssets = [];
 
-    /**
-     * Helper function to format duration from seconds to HH:MM:SS
-     */
+ 
+    //Helper function to format duration from seconds to HH:MM:SS
+
     const formatDuration = (ticks) => {
         if (!ticks) return 'N/A';
         const totalSeconds = ticks / 10000000; // Ticks are 100-nanosecond intervals
@@ -25,9 +25,8 @@ geotab.addin.initialize(function (api, state) {
             .join(":");
     };
 
-    /**
-     * Main function to fetch exceptions and display them
-     */
+    //Main function to fetch exceptions and display them
+    
     const fetchAndDisplayExceptions = () => {
         loader.style.display = 'block';
         resultsBody.innerHTML = ''; // Clear previous results
@@ -81,9 +80,8 @@ geotab.addin.initialize(function (api, state) {
         });
     };
 
-    /**
-     * Populates a dropdown <select> element with options
-     */
+    //Populates a dropdown <select> element with options
+    
     const populateFilter = (selectElement, items) => {
         items.sort((a, b) => a.name.localeCompare(b.name)).forEach(item => {
             const option = document.createElement('option');
@@ -93,9 +91,8 @@ geotab.addin.initialize(function (api, state) {
         });
     };
 
-    /**
-     * Initializes the page by fetching rules and assets for the filters
-     */
+     // Initializes the page by fetching rules and assets for the filters
+    
     const initializePage = () => {
         // Use Promise.all to fetch rules and devices at the same time
         Promise.all([
