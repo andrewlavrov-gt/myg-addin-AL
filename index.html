@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily Exceptions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- This script is ESSENTIAL. It's the Geotab API bridge. -->
+    <script src="https://my.geotab.com/api.js"></script>
+
+    <div class="container">
+        <h1>Daily Exceptions (Previous Day)</h1>
+
+        <div class="filter-container">
+            <div class="filter-item">
+                <label for="rule-filter">Filter by Rule:</label>
+                <select id="rule-filter">
+                    <option value="">All Rules</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <label for="asset-filter">Filter by Asset:</label>
+                <select id="asset-filter">
+                    <option value="">All Assets</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="loader" class="loader">Loading...</div>
+
+        <table id="results-table">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>Asset</th>
+                    <th>Rule</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody id="results-body">
+                <!-- Exception data will be inserted here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Our custom JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
